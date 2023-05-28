@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Headercomp() {
   return (
     <>
-      <Navbar rounded>
+      <Navbar rounded className="bg-gray-900">
         <Navbar.Brand href="https://ikhor.vercel.app/" className="mr-3">
           <Image src={"/gotJob.png"} alt="GotJob Logo" width={100} height={80} />
         </Navbar.Brand>
@@ -17,7 +17,8 @@ export default function Headercomp() {
               <span className="block text-sm">Bonnie Green</span>
               <span className="block truncate text-sm font-medium">name@flowbite.com</span>
             </Dropdown.Header>
-            <Dropdown.Item>Dashboard</Dropdown.Item>
+            <Dropdown.Item>Application</Dropdown.Item>
+            <Dropdown.Item>Saved</Dropdown.Item>
             <Dropdown.Item>Settings</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item>Sign out</Dropdown.Item>
@@ -25,7 +26,7 @@ export default function Headercomp() {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse className="">
-          <Navbar.Link href="/" className="font-bold md:py-2 md:px-3 md:hover:bg-gray-200 rounded-full">
+          <Navbar.Link href="/home" className="font-bold md:py-2 md:px-3 md:hover:bg-gray-200 rounded-full">
             Lowongan Pekerjaan
           </Navbar.Link>
           <Navbar.Link href="/#" className="font-bold md:py-2 md:px-3 md:hover:bg-gray-200 rounded-full">
