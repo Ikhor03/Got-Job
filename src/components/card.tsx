@@ -15,14 +15,14 @@ export default function UseCard({jobs} : Props) {
     }
 
     const randomColor = () => {
-        const arr = ["text-blue-500", "text-yellow-500", "text-pink-500", "text-lime-500", "text-blue-500"];
+        const arr = ["blue-500", "yellow-500", "pink-500", "lime-500", "blue-500"];
         const random = Math.floor(Math.random() * arr.length)
         return arr[random];
     }
 
   return (
-    <Link href={`/home/${jobs.slug}`} >
-      <div className="group active:bg-amber-900 cursor-pointer bg-gray-900 hover:scale-105 transition-transform ease-in-out duration-400 my-5 p-4 lg:p-8 rounded-lg">
+    <Link href={`/job/${jobs.slug}`} >
+      <div className={`group active:bg-amber-900 cursor-pointer border border-transparent bg-gray-900 hover:scale-105 hover:border-blue-500 transition-transform ease-in-out duration-400 my-5 p-4 lg:p-8 rounded-lg`}>
         {/* Love Icon */}
         <div className="mb-3 text-right">
           <button className="text-gray-50 transition-all duration-300 hover:scale-110 hover:text-red-600">
@@ -45,11 +45,11 @@ export default function UseCard({jobs} : Props) {
           <h3 className="text-xl font-medium text-gray-200">{jobs.company_name}</h3>
           <div className="text-sm font-medium">
             {jobs.job_types.map((type) => (
-                <span className={`m-1 ml-0 inline-block ${randomColor()}`}>{type}</span>
+                <span className={`m-1 ml-0 inline-block text-${randomColor()}`}>{type}</span>
             ))}
           </div>
           <div className="my-2 text-sm text-gray-400">$ 50K - 70K per year</div>
-          <div dangerouslySetInnerHTML={getDesc()} className="text-gray-300 text-xs h-44 w-full truncate"></div>
+          <div dangerouslySetInnerHTML={getDesc()} className="text-gray-300 text-xs h-20 w-full truncate"></div>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium text-gray-50">{jobs.tags.join(', ')}</span>

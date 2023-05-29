@@ -11,8 +11,8 @@ export default function Home() {
       <div className="md:flex justify-center mt-7 ">
         <SearchBar />
       </div>
-      <h2 className="text-center text-white text-xl font-bold mt-10">Job Feed</h2>
-      <div className="w-80 h-1 bg-amber-500 m-auto"></div>
+      <h2 className="text-center text-amber-500 text-xl font-bold mt-10">Job Feed</h2>
+      <div className="w-80 h-1 bg-yellow-500 m-auto"></div>
       <div className="w-full border-solid border border-gray-400 bg-gray-500 opacity-50 m-auto mb-8"></div>
       <div />
     </div>

@@ -1,7 +1,4 @@
-import UseCard from "@/components/card";
-import DetailJob from "@/components/detail";
 import HeaderComp from "@/components/navbar";
-import SearchBar from "@/components/searchBar";
 import Link from "next/link";
 
 export default function Home() {

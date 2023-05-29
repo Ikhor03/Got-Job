@@ -16,7 +16,7 @@ export default function SearchBar() {
           </label>
           <input className="flex rounded-lg w-full p-2.5 text-sm border-0 focus:ring-transparent" id="where" placeholder="city, province, or region" type="text" />
         </div>
-        <button type="submit" className="w-sc90 h-10 md:w-20 bg-amber-500 font-medium py-1 px-2 rounded-lg hover:bg-amber-600">
+        <button type="submit" className="w-sc90 h-10 md:w-20 bg-blue-500 font-medium py-1 px-2 rounded-lg hover:bg-blue-600">
           Search
         </button>
       </form>

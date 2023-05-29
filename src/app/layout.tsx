@@ -8,7 +8,7 @@ export const metadata = {
   description: "meet Jobseeker and requiter",
 };
 
-export default function RootLayout({ children, feed, detail }: { children: React.ReactNode; feed: React.ReactNode; detail: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
