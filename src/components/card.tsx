@@ -21,8 +21,8 @@ export default function UseCard({jobs} : Props) {
     }
 
   return (
-    <Link href={`/job/${jobs.slug}`} >
-      <div className={`group active:bg-amber-900 cursor-pointer border border-transparent bg-gray-900 hover:scale-105 hover:border-blue-500 transition-transform ease-in-out duration-400 my-5 p-4 lg:p-8 rounded-lg`}>
+    <div className={`group active:bg-amber-900 cursor-pointer border border-transparent bg-gray-900 hover:scale-105 hover:border-blue-500 transition-transform ease-in-out duration-400 my-5 p-4 lg:p-8 rounded-lg`}>
+        <Link href={`/job/${jobs.slug}`} >
         {/* Love Icon */}
         <div className="mb-3 text-right">
           <button className="text-gray-50 transition-all duration-300 hover:scale-110 hover:text-red-600">
@@ -55,7 +55,7 @@ export default function UseCard({jobs} : Props) {
           <span className="text-sm font-medium text-gray-50">{jobs.tags.join(', ')}</span>
           <span className="text-sm font-medium text-gray-100">{`${uploaded} days ago`}</span>
         </div>
-      </div>
     </Link >
+      </div>
   );
 }
