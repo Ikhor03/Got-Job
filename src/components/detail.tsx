@@ -39,8 +39,8 @@ export default function DetailJob({job} : Props) {
           <div className="flex flex-col items-start">
             <h3 className="text-xl font-bold text-gray-50">{job.title}</h3>
             <span className="text-xs text-gray-300">{job.location}</span>
-            {job.job_types.map((type) => (
-              <span className={`m-1 ml-0 inline-block ${randomColor()}`}>{type}</span>
+            {job.job_types.map((type, i) => (
+              <span key={i} className={`m-1 ml-0 inline-block ${randomColor()}`}>{type}</span>
             ))}
           </div>
 

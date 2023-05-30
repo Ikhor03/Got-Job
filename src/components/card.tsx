@@ -44,8 +44,8 @@ export default function UseCard({jobs} : Props) {
         <div className="my-4">
           <h3 className="text-xl font-medium text-gray-200">{jobs.company_name}</h3>
           <div className="text-sm font-medium">
-            {jobs.job_types.map((type) => (
-                <span className={`m-1 ml-0 inline-block text-${randomColor()}`}>{type}</span>
+            {jobs.job_types.map((type, i) => (
+                <span key={i} className={`m-1 ml-0 inline-block text-${randomColor()}`}>{type}</span>
             ))}
           </div>
           <div className="my-2 text-sm text-gray-400">$ 50K - 70K per year</div>
