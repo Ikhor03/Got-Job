@@ -1,9 +1,10 @@
+import { getJobs } from "@/api/callApi";
 import UseCard from "@/components/card";
 import DetailJob from "@/components/detail";
 
 export default async function Default() {
-  const res = await fetch("https://www.arbeitnow.com/api/job-board-api");
-  const jobs = await res.json();
+  const res = await getJobs();
+  const jobs = await res;
   const job: Jobs = jobs.data[20];
 
   return (

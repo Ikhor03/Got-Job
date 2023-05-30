@@ -1,7 +1,12 @@
-import HeaderComp from "@/components/navbar";
+import { getUserRandom } from "@/api/callApi";
+import Headercomp from "@/components/navbar";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const getuser = await getUserRandom();
+  const result = await getuser;
+  const user = result.results[0];
+
   return (
     <>
       {/* component */}
@@ -9,7 +14,7 @@ export default function Home() {
         <div className="header col-span-12">
           {/* Header content */}
           <header>
-            <HeaderComp />
+            <Headercomp user={user} />
           </header>
         </div>
 

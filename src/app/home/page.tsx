@@ -1,12 +1,17 @@
+import { getUserRandom } from "@/api/callApi";
 import Headercomp from "@/components/navbar";
 import SearchBar from "@/components/searchBar";
 
-export default function Home() {
+export default async function Home() {
+  const getuser = await getUserRandom();
+  const result = await getuser;
+  const user = result.results[0]
+
   return (
     <div className="header col-span-12">
       {/* Header content */}
       <header>
-        <Headercomp />
+        <Headercomp user={user}/>
       </header>
       <div className="md:flex justify-center mt-7 ">
         <SearchBar />

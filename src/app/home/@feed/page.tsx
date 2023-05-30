@@ -1,18 +1,20 @@
-
+import { getJobs } from "@/api/callApi";
 import UseCard from "@/components/card";
 
 export default async function Feed() {
-  let jobs: Jobs[] = [];
-  await fetch("https://www.arbeitnow.com/api/job-board-api")
-    .then((response) => response.json())
-    .then((result) => (jobs = result.data))
-    .catch((error) => console.log("error", error));
+  const jobsData = await getJobs();
+  const jobs = await jobsData;
+  let limit = 0;
+  const truncateData = jobs.data.filter((e : Jobs, i : number) => {
+    limit++;
+    return limit < 20
+  })
 
   return (
     <>
       <div className="gap-4 col-span-12 md:col-start-1 md:col-end-6 pl-4">
-        {jobs.map((job) => (
-          <UseCard key={job.slug} jobs={job} />
+        {truncateData.map((job: Jobs, id : number) => (
+          <UseCard key={id} jobs={job} />
         ))}
       </div>
     </>

@@ -25,11 +25,11 @@ export default function DetailJob({job} : Props) {
 
   return (
     <div>
-      <div className="bg-lime-500 flex justify-start items-center sticky top-0">
-        <Link href="/apply" className="w-40 h-10 m-3 text-center font-semibold bg-pink-600 py-1 px-2 rounded-lg hover:bg-pink-700">
+      <div className="bg-gray-700 shadow-md flex justify-start items-center sticky top-0">
+        <Link href={`/apply/${job.slug}`} className="w-40 h-10 m-3 text-center font-semibold bg-pink-600 py-1 px-2 rounded-lg hover:bg-pink-700">
           APPLY NOW
         </Link>
-        <a href={job.url} className="text-white hover:underline font-medium text-lg">
+        <a href={job.url} className="text-lime-500 hover:underline font-medium text-lg">
           see company
         </a>
       </div>
@@ -53,7 +53,7 @@ export default function DetailJob({job} : Props) {
         <div className="mt-5">
           <div className="text-white text-sm font-medium">
             <h4 className="font-bold text-lg">Description</h4>
-            <hr ></hr>
+            <hr></hr>
             <div dangerouslySetInnerHTML={getDesc()} className="mt-3 leading-8 indent-4"></div>
           </div>
           <h4 className=" text-white font-bold text-lg mt-5">Salary</h4>
