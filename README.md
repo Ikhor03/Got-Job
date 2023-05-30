@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Ikhor03/Got-Job.git">
-    <img src="public/images/static/favicon.png" alt="Logo" width="80" height="80">
+    <img src="public/gotJob.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Got Job</h3>
@@ -16,7 +16,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-[![Product Name Screen Shot][product-screenshot]](https://dapur-solo.vercel.app/)
+[![Product Name Screen Shot][public/ss.png]](https://got-job.vercel.app/)
 
 Ini project pertama saya yang menggunakan Next js dan Typescript yang baru saya pelajari beberapa hari ini. Meskipun dihari pertama saya hanya stuck pada "tutorial hell" dan berakhir tidak mengerjakan apa-apa, tapi sekarang sudah mulai mengerti alur dan konsep pembangunan aplikasi menggunakan 2 teknologi itu terutama. Masih banyak yang perlu selesai dalam project ini, bahkan saya baru berhasil membangun UI untuk halaman pencarian, detail, dan form apply yang mana belum berfungsi juga. Tapi setidaknya saya sudah banyak belajar dari sini, terutama yang paling keren adalah betapa powerfullnya typescript. Dan juga project ini sepertinya akan saya teruskan sampai selesai, sebagai perkenalan saya dengan Next js dan Typescript.
 
