@@ -13,13 +13,13 @@ export default function Headercomp({user} : Props) {
   return (
     <Navbar rounded className="bg-gray-900">
       <Navbar.Brand href="https://ikhor.vercel.app/" className="mr-3">
-        <Image src={"/gotJob.png"} alt="GotJob Logo" width={100} height={80} />
+        <Image src={"/gotJob.png"} alt="GotJob Logo" width={100} height={80} priority={true} />
       </Navbar.Brand>
 
       <div className="flex md:order-2">
         <Dropdown inline label={<Avatar alt="User settings" img={user.picture.thumbnail} rounded />}>
           <Dropdown.Header>
-            <span className="block text-sm">{user.name.first +" " +user.name.last}</span>
+            <span className="block text-sm">{user.name.first + " " + user.name.last}</span>
             <span className="block truncate text-sm font-medium">{user.email}</span>
           </Dropdown.Header>
           <Dropdown.Item>Application</Dropdown.Item>

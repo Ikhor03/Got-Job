@@ -2,6 +2,7 @@
 
 import { Tooltip } from "flowbite-react";
 import Link from "next/link";
+import {useEffect, useState} from "react"
 
 type Props = {
     job : Jobs
@@ -12,16 +13,17 @@ export default function DetailJob({job} : Props) {
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
     const day = date.getDate();
+    const [randomColor, setRandomColor] = useState("text-pink-500")
 
     function getDesc() {
       return { __html: job.description };
     };
 
-    const randomColor = () => {
-      const arr = ["text-blue-500", "text-yellow-500", "text-pink-500", "text-lime-500", "text-blue-500"];
-      const random = Math.floor(Math.random() * arr.length);
-      return arr[random];
-    };
+    useEffect(() => {
+        const arr = ["text-blue-500", "text-yellow-500", "text-pink-500", "text-lime-500", "text-blue-500"];
+        const random = Math.floor(Math.random() * arr.length);
+        setRandomColor(arr[random]);
+    }, []);
 
   return (
     <div>
@@ -40,7 +42,7 @@ export default function DetailJob({job} : Props) {
             <h3 className="text-xl font-bold text-gray-50">{job.title}</h3>
             <span className="text-xs text-gray-300">{job.location}</span>
             {job.job_types.map((type, i) => (
-              <span key={i} className={`m-1 ml-0 inline-block ${randomColor()}`}>{type}</span>
+              <span key={i} className={`m-1 ml-0 inline-block ${randomColor}`}>{type}</span>
             ))}
           </div>
 

@@ -2,27 +2,28 @@
 
 import { Tooltip } from "flowbite-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-type Props = {jobs : Jobs}
+type Props = { jobs: Jobs };
 
-export default function UseCard({jobs} : Props) {
-    const date = new Date(jobs.created_at * 1000);
-    const timeDiff = Math.abs(new Date().getTime() - date.getTime());
-    const uploaded = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    
-    function getDesc() {
-        return { __html: jobs.description };
-    }
+export default function UseCard({ jobs }: Props) {
+  const date = new Date(jobs.created_at * 1000);
+  const timeDiff = Math.abs(new Date().getTime() - date.getTime());
+  const uploaded = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  const [randomColor, setRandomColor] = useState("text-yellow-500");
 
-    const randomColor = () => {
-        const arr = ["blue-500", "yellow-500", "pink-500", "lime-500", "blue-500"];
-        const random = Math.floor(Math.random() * arr.length)
-        return arr[random];
-    }
+  function getDesc() {
+    return { __html: jobs.description };
+  }
 
+  useEffect(() => {
+    const arr = ["text-blue-500", "text-yellow-500", "text-pink-500", "text-lime-500", "text-blue-500"];
+    const random = Math.floor(Math.random() * arr.length);
+    setRandomColor(arr[random]);
+  }, []);
   return (
     <div className={`group active:bg-amber-900 cursor-pointer border border-transparent bg-gray-900 hover:scale-105 hover:border-blue-500 transition-transform ease-in-out duration-400 my-5 p-4 lg:p-8 rounded-lg`}>
-        <Link href={`/job/${jobs.slug}`} >
+      <Link href={`/job/${jobs.slug}`}>
         {/* Love Icon */}
         <div className="mb-3 text-right">
           <button className="text-gray-50 transition-all duration-300 hover:scale-110 hover:text-red-600">
@@ -45,17 +46,19 @@ export default function UseCard({jobs} : Props) {
           <h3 className="text-xl font-medium text-gray-200">{jobs.company_name}</h3>
           <div className="text-sm font-medium">
             {jobs.job_types.map((type, i) => (
-                <span key={i} className={`m-1 ml-0 inline-block text-${randomColor()}`}>{type}</span>
+              <span key={i} className={`m-1 ml-0 inline-block ${randomColor}`}>
+                {type}
+              </span>
             ))}
           </div>
           <div className="my-2 text-sm text-gray-400">$ 50K - 70K per year</div>
           <div dangerouslySetInnerHTML={getDesc()} className="text-gray-300 text-xs h-20 w-full truncate"></div>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-sm font-medium text-gray-50">{jobs.tags.join(', ')}</span>
+          <span className="text-sm font-medium text-gray-50">{jobs.tags.join(", ")}</span>
           <span className="text-sm font-medium text-gray-100">{`${uploaded} days ago`}</span>
         </div>
-    </Link >
-      </div>
+      </Link>
+    </div>
   );
 }
